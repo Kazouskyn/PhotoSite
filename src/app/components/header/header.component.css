@@ -1,0 +1,32 @@
+.headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.shop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+.contactUs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+

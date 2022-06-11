@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  selectedValue: string | undefined;
+  shopChoices: string[] = [
+    'Prints',
+    'Backgrounds'
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

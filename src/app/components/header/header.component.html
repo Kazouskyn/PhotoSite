@@ -1,1 +1,23 @@
-<p>header works!</p>
+<div class="headerContainer">
+  <a routerLink="/home">
+    <div class="home">Home</div>
+  </a>
+  <div class="shop">
+    <a routerLink="/shop">Shop</a>
+        <!-- <mat-form-field appearance="fill">
+            <mat-label></mat-label>
+            <mat-select name="shop">
+              <mat-option *ngFor="let shop of shopChoices" [value]="shop">
+                {{shop}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+  </div>
+  <a routerLink="/about">
+    <div class="about">About</div>
+  </a>
+  <a routerLink="/contact">
+    <div class="contactUs">Contact Us</div>
+  </a>
+
+</div>
