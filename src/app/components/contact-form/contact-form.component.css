@@ -1,0 +1,11 @@
+.formContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radioBtns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

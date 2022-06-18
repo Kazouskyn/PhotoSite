@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {MatSelectModule} from '@angular/material/select'; 
-
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './components/button/button.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -11,6 +12,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     AboutComponent,
     HomeComponent,
     ShopComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
