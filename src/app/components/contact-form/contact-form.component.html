@@ -1,62 +1,95 @@
 <div class="formContainer">
-    <form>
-        <p>
-            <mat-form-field appearance="legacy">
-              <mat-label>Legacy form field</mat-label>
-              <input matInput placeholder="Placeholder">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="standard">
-              <mat-label>Standard form field</mat-label>
-              <input matInput placeholder="Placeholder">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="fill">
-              <mat-label>Fill form field</mat-label>`
-              <input matInput placeholder="Placeholder">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="outline">
-              <mat-label>Outline form field</mat-label>
-              <input matInput placeholder="Placeholder">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-hint>Hint</mat-hint>
-            </mat-form-field>
-          </p>
-          
-          
-        <!-- <mat-form-field appearance="standard">
-            <div class="radiobtns">
-                <label class="label">Purpose of Email</label>
-                <p>Select One</p>
-                <mat-radio-group aria-label="Purpose of Email">
-                    <mat-radio-button value="Business Inquiries">Business Inquiries</mat-radio-button>
-                    <mat-radio-button value="Customer Service">Customer Service</mat-radio-button>
-                </mat-radio-group>
-            </div>
+    <form (ngSubmit)="submitForm()">
+      <!-- radiobtns -->
+      <div class="radiobtns">
+        <label class="label">Purpose of Email</label>
+        <p>Select One</p>
+        <mat-radio-group
+          aria-label="Purpose of Email" 
+          [(ngModel)]="formType"
+          [ngModelOptions]="{standalone: true}">
+          <!-- <mat-radio-button *ngFor="let types of formTypes" [value]="types">
+            {{types}}
+          </mat-radio-button> -->
+            <mat-radio-button value="Business Inquiries">Business Inquiries</mat-radio-button>
+            <mat-radio-button value="Customer Service">Customer Service</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <!-- name -->
+      <div class="nameLabel">
+        <label>Name</label>
+      </div>
+      <div class="name">
+        <mat-form-field 
+        appearance="legacy"
+        [(ngModel)]="fName"
+        name="fName" ngDefaultControl 
+        >
+          <input matInput="text" placeholder="First Name">
+        </mat-form-field>
 
-            <mat-label>Standard form field</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-
-            <label class="label">Name</label>
-            <input type="text" name="name">
-
-            <label class="label">Email</label>
-            <input type="text" name="email">
-
-            <label class="label">Message</label>
-            <textarea name="message"></textarea>
-        </mat-form-field> -->
+        <mat-form-field 
+        appearance="legacy"
+        [(ngModel)]="lName"
+        name="lName" ngDefaultControl
+        >
+          <input matInput="text" placeholder="last Name">
+        </mat-form-field>
+      </div>
+      <!-- email -->
+      <div class="emailLabel">
+        <label>email</label>
+      </div>
+      <div class="email">
+        <mat-form-field 
+        appearance="legacy"
+        [(ngModel)]="email"
+        name="email" ngDefaultControl
+        >
+          <input matInput="email" placeholder="email">
+        </mat-form-field>
+      </div>
+      <div *ngIf="this.formType == 'Business Inquiries'" class="subject">
+        <div class="subjectLabel">
+          <label>subject</label>
+        </div>
+          <mat-form-field 
+          appearance="legacy"
+          [(ngModel)]="subject"
+          name="subject" ngDefaultControl
+          >
+            <input matInput="text" placeholder="subject">
+          </mat-form-field>
+      </div>
+      <!-- order -->
+      <div *ngIf="this.formType == 'Customer Service'" class="order">
+        <div class="orderLabel">
+          <label>order #</label>
+        </div>
+          <mat-form-field
+          appearance="legacy"
+          [(ngModel)]="subject"
+          name="subject" ngDefaultControl
+          >
+            <input matInput="text" placeholder="order #">
+          </mat-form-field>
+      </div>
+        <!-- msgLabel -->
+      <div class="msgLabel">
+        <label>Message</label>
+      </div>
+      <div class="msg">
+        <mat-form-field 
+        appearance="legacy"
+        [(ngModel)]="message"
+        name="message" ngDefaultControl
+        >
+        <textarea matInput="textarea" placeholder=""></textarea>
+      </mat-form-field>
+      </div>
+    <!-- Submit  -->
+      <div class="Submitbtn">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
     </form>
 </div>
